@@ -1,0 +1,109 @@
+[user]
+  signingkey = 74CA9585246DE539E055A9FBD44E5961BE1C2EE1
+  name = Jonathan MacDonald
+  email = j0nnyappleseed000@mac.com
+[github]
+  user = eiei0
+[commit]
+  gpgsign = true
+  template = ~/.gitmessage
+[color]
+  ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+[grep]
+  linenumber = true                 # show line numbers when git grep
+[format]
+  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+[core]
+  excludesfile = /Users/jonathanmacdonald/.gitignore
+  editor = /usr/bin/vim
+  mergeoptions = --no-edit
+[merge]
+  tool = meld
+[mergetool]
+  prompt = false
+	keepBackup = true
+[mergetool  "mydeltawalker"]
+  cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+[gpg]
+    program = gpg
+[alias]
+  # add
+  a = add                           # add
+  chunkyadd = add --patch           # stage commits chunk by chunk
+  tree = log --graph --oneline --all  # show tree graph log
+
+  #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+  recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
+  # branch
+  b = branch -v                     # branch (verbose)
+
+  # commit
+  c = commit -m                     # commit with message
+  ca = commit -am                   # commit all with message
+  ci = commit                       # commit
+  amend = commit --amend            # ammend your last commit
+  ammend = commit --amend           # ammend your last commit
+
+  # checkout
+  co = checkout                     # checkout
+  nb = checkout -b                  # create and switch to a new branch (mnemonic: "git new branch branchname...")
+
+  # cherry-pick
+  cp = cherry-pick -x               # grab a change from a branch
+
+  # diff
+  df = diff                          # diff unstaged changes
+  dc = diff --cached                # diff staged changes
+  last = diff HEAD^                 # diff last committed change
+
+  # diff-so-fancy
+  d = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\"  && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
+
+  # log
+  l = log --graph --date=short
+  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+  simple = log --pretty=format:\" * %s\"
+  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+
+  # pull
+  pl = pull                         # pull
+
+  # push
+  ps = push                         # push
+
+  # rebase
+  rc = rebase --continue            # continue rebase
+  rs = rebase --skip                # skip rebase
+
+  # remote
+  r = remote -v                     # show remotes (verbose)
+
+  # reset
+  unstage = reset HEAD              # remove files from index (tracking)
+  uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+  filelog = log -u                  # show changes to a file
+  mt = mergetool                    # fire up the merge tool
+
+  # stash
+  ss = stash                        # stash changes
+  sl = stash list                   # list stashes
+  sa = stash apply                  # apply stash (restore changes)
+  sd = stash drop                   # drop stashes (destory changes)
+
+  # status
+  s = status                        # status
+  st = status                       # status
+  stat = status                     # status
+[url "git@github.com:"]
+	insteadOf = https://github.com/
