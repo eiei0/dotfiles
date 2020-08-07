@@ -17,6 +17,9 @@ export ZSH=~/.oh-my-zsh                                       # Path to your oh-
 source $ZSH/oh-my-zsh.sh
 export PATH="${PATH}:${HOME}/Library/Python/2.7/bin"                               # for aws config
 
+plugins=(asdf)
+. $(brew --prefix asdf)/asdf.sh
+
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 export GOPATH=$HOME/go # don't forget to change your path correctly!
