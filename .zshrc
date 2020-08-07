@@ -41,7 +41,7 @@ export PS1='$(kube_ps1)'$PS1
 # Configs/Utilities
 alias kode='cd ~/code/'                                                    # jump to code directory
 alias dotfiles='cd ~/.dotfiles'                                        # jump to dotfiles directory
-# alias vim='nvim'
+alias vim='nvim'
 alias ve='nvim ~/.vimrc'                                                            # vimrc editing
 alias ze='nvim ~/.zshrc'                                                      # zsh profile editing
 alias ge='nvim ~/.gitconfig'                                                    # gitconfig editing
