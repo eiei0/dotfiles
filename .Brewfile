@@ -23,6 +23,7 @@ brew "tmux"
 brew "zsh"
 
 # Casks
+cask "bloomrpc"
 cask "font-hack-nerd-font"
 cask "ngrok"
 cask "visual-studio-code"
