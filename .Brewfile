@@ -1,4 +1,5 @@
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 
 # Brews
 brew "asdf"
