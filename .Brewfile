@@ -1,5 +1,6 @@
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "yoheimuta/protolint"
 
 # Brews
 brew "asdf"
@@ -18,6 +19,7 @@ brew "neovim"
 brew "minikube"
 brew "postgresql"
 brew "protobuf"
+brew "protolint"
 brew "reattach-to-user-namespace"
 brew "redis"
 brew "terraform"
