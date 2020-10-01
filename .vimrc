@@ -25,6 +25,7 @@
   Plug 'tpope/vim-commentary'                                                  " Easily use comments
   Plug 'derekprior/vim-trimmer'                                            " trim whitespace on save
   Plug 'noprompt/vim-yardoc'                                                         " yardoc syntax
+  Plug 'yoheimuta/vim-protolint'                                                 " linter for protos
   "---------------- Git ----------------------------------------------------------------------------
   Plug 'airblade/vim-gitgutter'                                                 " git diff in gutter
   Plug 'tpope/vim-fugitive'                                                        " vim git wrapper
