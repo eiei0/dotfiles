@@ -112,7 +112,7 @@
   \              [ 'filetype', 'fileencoding'] ]
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'fugitive#head'
+  \   'gitbranch': 'FugitiveHead'
   \ },
   \ 'component_expand': {
   \   'linter_checking': 'lightline#ale#checking',
