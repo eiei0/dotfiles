@@ -201,3 +201,5 @@
   let g:auto_save = 1                                               " enable AutoSave on Vim startup
   "---------------- indentLine ---------------------------------------------------------------------
   let g:indentLine_color_term = 239                                  " indentation lines more subtle
+  "---------------- netrw --------------------------------------------------------------------------
+  let g:netrw_dirhistmax = 0                                                  " disable history file
