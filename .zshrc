@@ -24,11 +24,10 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 export GOPATH=$HOME/go # don't forget to change your path correctly!
 export GOBIN=$GOPATH/bin
-export GOROOT=$PATH:$GOPATH
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH=$PATH:$GOROOT/bin
-export PATH="${GOROOT}/bin:${PATH}"
+# export PATH="${GOROOT}/bin:${PATH}"
 export GOPRIVATE="github.com/apptegy"
 # Created by `pipx` on 2021-12-05 05:56:12
 export PATH="$PATH:/Users/jonathanmacdonald/.local/bin"
