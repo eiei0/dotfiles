@@ -1,46 +1,61 @@
 #!/bin/sh
 
-# Install xcode command line tools
+echo "Started: Installing Xcode command line tools"
 if ! command -v xcode-select -p 1>/dev/null; then
   echo "Xcode command line tools already installed"
 else
-  echo "Installing xcode command line tools"
   xcode-select --install
+  echo "Completed: Xcode command line tools\n"
 fi
 
-# Install homebrew if it's missing
+echo "Started: Installing Homebrew"
 if ! command -v brew >/dev/null 2>&1; then
-  echo "Installing homebrew"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/homebrew/install/master/install)"
+  echo "Homebrew already installed"
+else
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "Completed: Homebrew Install\n"
 fi
 
 if [ -f "$HOME/.Brewfile" ]; then
-  echo "Running homebrew bundle"
+  echo "Started: Homebrew bundle"
   brew bundle --global
+  echo "Completed: Homebrew bundle\n"
 fi
 
-if [ -d "$HOME/.iterm2" ]; then
-  echo "Setting iTerm preference folder"
+if [ -f "$HOME/.iterm2" ]; then
+  echo "Started: Setting iTerm preference folder"
   defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+  echo "Completed: Setting iTerm preference folder\n"
 fi
 
 if ! command -v asdf >/dev/null 2>&1; then
+  echo "Started: Installing Ruby via asdf"
   if ! command -v which ruby >/dev/null 2>&1; then
     echo "Ruby already installed"
   else
-    echo "Install asdf ruby"
     asdf plugin-add ruby "https://github.com/asdf-vm/asdf-ruby.git"
+    echo "Completed: Installing Ruby via asdf\n"
+  fi
+
+  echo "Started: Installing Go via asdf"
+  if ! command -v which go >/dev/null 2>&1; then
+    echo "Go already installed\n"
+  else
+    asdf plugin-add golang "https://github.com/kennyp/asdf-golang.git"
+    echo "Completed: Installing Go via asdf\n"
   fi
 fi
 
 # Run vim-plug
 if command -v vim >/dev/null 2>&1; then
-  echo "Bootstraping Vim"
+  echo "Started: Bootstraping Vim"
   vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+  echo "Completed: Bootstraping Vim\n"
 fi
 
-echo "Updating the yadm repo origin URL"
+echo "Started: Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:eiei0/dotfiles.git"
 yadm branch --set-upstream-to origin/master
+echo "Completed: Updating the yadm repo origin URL\n"
 
-echo "\n\nBootstrap complete"
+echo "\n\nBootstrap complete!"

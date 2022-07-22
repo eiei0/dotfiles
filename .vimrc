@@ -14,12 +14,11 @@
   Plug 'itchyny/lightline.vim'                                               " minimalist status bar
   Plug 'ryanoasis/vim-devicons'                                                              " icons
   "---------------- Syntax -------------------------------------------------------------------------
-  Plug 'w0rp/ale'                                      " syntax checking and live RuboCop violations
+  Plug 'w0rp/ale'                                                                  " syntax checking
   Plug 'maximbaz/lightline-ale'                                        " ALE indicator for lightline
   Plug 'godlygeek/tabular'                                                         " for indentation
   Plug 'Yggdroot/indentLine'                                                " adds indentation lines
   Plug 'sheerun/vim-polyglot'                                                       " all the syntax
-  Plug 'posva/vim-vue'                                                               " vue js syntax
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }                                     " go syntax
   Plug 'alvan/vim-closetag'                                                         " tag completion
   Plug 'tpope/vim-commentary'                                                  " Easily use comments
@@ -32,10 +31,6 @@
   "---------------- Ruby/Rails ---------------------------------------------------------------------
   Plug 'tpope/vim-endwise'                                               " auto end addition in ruby
   Plug 'vim-ruby/vim-ruby'                                                    " ruby syntax & indent
-  Plug 'janko-m/vim-test'                                                         " vim rspec runner
-  Plug 't9md/vim-ruby-xmpfilter'                                            " inline ruby completion
-  Plug 'tpope/vim-rails'                                                         " rails power tools
-  Plug 'tpope/vim-dispatch'                                               " run rspec specs from vim
   "---------------- Misc ---------------------------------------------------------------------------
   Plug '907th/vim-auto-save'                                     " save everytime buffer is modified
   call plug#end()                                                                " end vim-plug list
@@ -137,18 +132,14 @@
   "--------------- Ale -----------------------------------------------------------------------------
   let g:ale_fixers = {
   \   'go': ['gofmt'],
-  \   'javascript': ['eslint', 'prettier'],
   \   'ruby': ['rubocop'],
-  \   'vue': ['prettier'],
   \   'yaml': ['prettier'],
-  \   'proto': ['ale#fixers#protolint#Fix'],
+  \   'proto': ['ele#fixers#protolint#Fix'],
   \}
 
   let g:ale_linters = {
   \   'go': ['golint'],
-  \   'javascript': ['eslint', 'prettier'],
-  \   'erb': ['erb'],
-  \   'ruby': ['rubocop', 'sorbet', 'brakeman', 'rails_best_practices'],
+  \   'ruby': ['rubocop'],
   \   'proto': ['protolint']
   \}
 
