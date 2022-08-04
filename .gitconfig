@@ -24,7 +24,7 @@
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [core]
   excludesfile = /Users/jonathanmacdonald/.gitignore
-  editor = /usr/bin/vim
+  editor = /opt/homebrew/bin/nvim
   mergeoptions = --no-edit
 [merge]
   tool = meld
