@@ -1,5 +1,5 @@
 [user]
-  signingkey = 74CA9585246DE539E055A9FBD44E5961BE1C2EE1
+  signingkey = 2547794CA2769EF5BA2575C9A3ED9F421F463D54
   name = Jonathan MacDonald
   email = j0nnyappleseed000@mac.com
 [github]
@@ -34,7 +34,7 @@
 [mergetool  "mydeltawalker"]
   cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 [gpg]
-    program = gpg
+  program = /opt/homebrew/bin/gpg
 [alias]
   # add
   a = add                           # add
