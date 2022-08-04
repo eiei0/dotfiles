@@ -3,9 +3,7 @@
 ZSH_THEME="agnoster"
 RPROMPT=
 
-# ================= Config ========================================================================
-
-export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH" # Add rbenv
+# ================= Configs =======================================================================
 
 # Tmux
 export TERM="screen-256color" # Tmux 256 color forcing
