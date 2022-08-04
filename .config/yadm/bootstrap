@@ -58,4 +58,4 @@ yadm remote set-url origin "git@github.com:eiei0/dotfiles.git"
 yadm branch --set-upstream-to origin/master
 echo "Completed: Updating the yadm repo origin URL\n"
 
-echo "\n\nBootstrap complete!"
+echo "\n\nBootstrap complete!\n\n *** DONT FORGET TO SET YOUR GPG KEY:\n gpg --list-keys\n git config --global user.signingkey <Key from your list>"
