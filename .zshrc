@@ -70,4 +70,4 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias g='git'
 
 # Stitch Fix
-alias stitch='cd ~/code/stitch'                                  # jump to stitchfix code directory
+alias sf='cd ~/code/stitchfix'                                  # jump to stitchfix code directory
