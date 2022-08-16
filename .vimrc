@@ -33,6 +33,7 @@
   Plug 'vim-ruby/vim-ruby'                                                    " ruby syntax & indent
   "---------------- Misc ---------------------------------------------------------------------------
   Plug '907th/vim-auto-save'                                     " save everytime buffer is modified
+  Plug 'vim-test/vim-test'                                          " wrapper for running test suite
   call plug#end()                                                                " end vim-plug list
 " ================= Interface ======================================================================
   let mapleader=" "                                                         " change leader to space
