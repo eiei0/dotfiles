@@ -30,6 +30,9 @@ export GOPRIVATE="github.com/apptegy"
 
 # Source fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Source private env file
+source $HOME/.env
 # ================= Aliases =======================================================================
 
 # Configs/Utilities
