@@ -23,9 +23,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # Golang
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOBIN
-export PATH=$PATH:$GOROOT/bin
 
 # Source fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
