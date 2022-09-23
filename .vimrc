@@ -15,6 +15,8 @@
   Plug 'ryanoasis/vim-devicons'                                                              " icons
   "---------------- Syntax -------------------------------------------------------------------------
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                  " syntax highlighting
+  Plug 'neovim/nvim-lspconfig'                                                    " language servers
+
   Plug 'godlygeek/tabular'                                                         " for indentation
   Plug 'Yggdroot/indentLine'                                                " adds indentation lines
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }                                     " go syntax
@@ -94,11 +96,73 @@
   nnoremap <C-L> <C-W><C-L>
   nnoremap <C-H> <C-W><C-H>
 " ================= Plugin Settings ================================================================
-  "---------------- nvim-treesitter ----------------------------------------------------------------
+  "---------------- nvim-treesitter / nvim-lspconfig -----------------------------------------------
 lua << EOF
-require'nvim-treesitter.configs'.setup {
+  require'lspconfig'.gopls.setup{}
+  require'lspconfig'.solargraph.setup{}
+
+  -- nvim-lspconfig mappings.
+  -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+  local opts = { noremap=true, silent=true }
+  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
+  -- Use an on_attach function to only map the following keys
+  -- after the language server attaches to the current buffer
+  local on_attach = function(client, bufnr)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    -- Mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  end
+
+  -- suppress error messages from lang servers
+  vim.notify = function(msg, log_level, _opts)
+    if msg:match("exit code") then
+      return
+    end
+
+    if log_level == vim.log.levels.ERROR then
+      vim.api.nvim_err_writeln(msg)
+    else
+      vim.api.nvim_echo({{msg}}, true, {})
+    end
+  end
+
+  require('lspconfig')['gopls'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+  }
+
+  require('lspconfig')['solargraph'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+  }
+
+  require'nvim-treesitter.configs'.setup {
     -- A list of parser names
-    ensure_installed = { "ruby", "go", "gomod", "proto", "markdown", "gitignore", "dockerfile", "vim", "lua" },
+    ensure_installed = {
+      "ruby", "go", "gomod", "proto", "markdown", "gitignore", "dockerfile", "vim"
+    },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -133,6 +197,11 @@ EOF
   let NERDTreeShowHidden=1                                                       " Show hidden files
   let NERDTreeQuitOnOpen = 1                                     " quit NERDTree when opening a file
   let NERDTreeIgnore = ['\.DS_Store']                                           " ignore index files
+  "---------------- vim-go -------------------------------------------------------------------------
+  let g:go_def_mapping_enabled = 0                              " prefer language server over vim-go
+  let g:go_code_completion_enabled = 0
+  let g:go_auto_type_info = 0
+
   "---------------- vim-test -----------------------------------------------------------------------
   " space-r runs current spec file
   map <Leader>r :TestFile<CR>
