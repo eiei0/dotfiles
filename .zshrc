@@ -26,7 +26,6 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH=$PATH:$GOROOT/bin
-export GOPRIVATE="github.com/apptegy"
 
 # Source fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
