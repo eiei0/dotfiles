@@ -14,6 +14,7 @@
   Plug 'itchyny/lightline.vim'                                               " minimalist status bar
   Plug 'ryanoasis/vim-devicons'                                                              " icons
   "---------------- Syntax -------------------------------------------------------------------------
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                  " syntax highlighting
   Plug 'godlygeek/tabular'                                                         " for indentation
   Plug 'Yggdroot/indentLine'                                                " adds indentation lines
   Plug 'sheerun/vim-polyglot'                                                       " all the syntax
@@ -36,7 +37,6 @@
 " ================= Interface ======================================================================
   let mapleader=" "                                                         " change leader to space
   "---------------- Appearance ---------------------------------------------------------------------
-  syntax enable                                                        " turn on syntax highlighting
   filetype plugin indent on        " filetype detection, syntax plugin detection, auto indent syntax
   match ErrorMsg '\s\+$'                                             " highlight trailing whitespace
 
@@ -95,6 +95,31 @@
   nnoremap <C-L> <C-W><C-L>
   nnoremap <C-H> <C-W><C-H>
 " ================= Plugin Settings ================================================================
+  "---------------- nvim-treesitter ----------------------------------------------------------------
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    -- A list of parser names
+    ensure_installed = { "ruby", "go", "gomod", "proto", "markdown", "gitignore", "dockerfile", "vim", "lua" },
+
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+
+    -- Automatically install missing parsers when entering buffer
+    auto_install = true,
+
+    highlight = {
+      -- `false` will disable the whole extension
+      enable = true,
+
+      -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+      -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+      -- Using this option may slow down your editor, and you may see some duplicate highlights.
+      -- Instead of true it can also be a list of languages
+      additional_vim_regex_highlighting = false,
+    },
+  }
+EOF
+
   "---------------- vim-gitgutter ------------------------------------------------------------------
   set updatetime=100
   "---------------- vue-language-server ------------------------------------------------------------
