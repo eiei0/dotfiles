@@ -17,7 +17,6 @@
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                  " syntax highlighting
   Plug 'godlygeek/tabular'                                                         " for indentation
   Plug 'Yggdroot/indentLine'                                                " adds indentation lines
-  Plug 'sheerun/vim-polyglot'                                                       " all the syntax
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }                                     " go syntax
   Plug 'alvan/vim-closetag'                                                         " tag completion
   Plug 'tpope/vim-commentary'                                                  " Easily use comments
