@@ -14,8 +14,6 @@
   Plug 'itchyny/lightline.vim'                                               " minimalist status bar
   Plug 'ryanoasis/vim-devicons'                                                              " icons
   "---------------- Syntax -------------------------------------------------------------------------
-  Plug 'w0rp/ale'                                                                  " syntax checking
-  Plug 'maximbaz/lightline-ale'                                        " ALE indicator for lightline
   Plug 'godlygeek/tabular'                                                         " for indentation
   Plug 'Yggdroot/indentLine'                                                " adds indentation lines
   Plug 'sheerun/vim-polyglot'                                                       " all the syntax
@@ -97,59 +95,6 @@
   nnoremap <C-L> <C-W><C-L>
   nnoremap <C-H> <C-W><C-H>
 " ================= Plugin Settings ================================================================
-  "---------------- Lightline ----------------------------------------------------------------------
-  let g:lightline = {
-  \ 'colorscheme': 'seoul256',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-  \   'right': [ [ 'lineinfo' ],
-  \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-  \              [ 'filetype', 'fileencoding'] ]
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead'
-  \ },
-  \ 'component_expand': {
-  \   'linter_checking': 'lightline#ale#checking',
-  \   'linter_warnings': 'lightline#ale#warnings',
-  \   'linter_errors': 'lightline#ale#errors',
-  \   'linter_ok': 'lightline#ale#ok'
-  \ },
-  \ 'component_type': {
-  \   'linter_checking': 'left',
-  \   'linter_warnings': 'warning',
-  \   'linter_errors': 'error',
-  \   'linter_ok': 'left'
-  \ }
-  \}
-
-  let g:lightline#ale#indicator_checking = "\uf110"                " indicator icons
-  let g:lightline#ale#indicator_warnings = "\uf071  "              " whitespace intentional
-  let g:lightline#ale#indicator_errors = "\uf05e    "              " whitespace intentional
-  let g:lightline#ale#indicator_ok = "\uf00c"
-
-  set noshowmode                                                   " mode is shown in statusline now
-  "--------------- Ale -----------------------------------------------------------------------------
-  let g:ale_fixers = {
-  \   'go': ['gofmt'],
-  \   'ruby': ['rubocop'],
-  \   'yaml': ['prettier'],
-  \   'proto': ['ele#fixers#protolint#Fix'],
-  \}
-
-  let g:ale_linters = {
-  \   'go': ['golint'],
-  \   'ruby': ['rubocop'],
-  \   'proto': ['protolint']
-  \}
-
-  let g:ale_lint_on_text_changed = 'never'
-
-  " let g:ale_proto_protolint_config = '/path/to/config/.protolint.yaml'
-
-  " Bind F8 to fixing problems with ALE
-  nmap <Leader>\ <Plug>(ale_fix)
   "---------------- vim-gitgutter ------------------------------------------------------------------
   set updatetime=100
   "---------------- vue-language-server ------------------------------------------------------------
