@@ -20,7 +20,6 @@
   Plug 'neovim/nvim-lspconfig'                                                    " language servers
   Plug 'godlygeek/tabular'                                                         " for indentation
   Plug 'Yggdroot/indentLine'                                                " adds indentation lines
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }                                     " go syntax
   Plug 'alvan/vim-closetag'                                                         " tag completion
   Plug 'tpope/vim-commentary'                                                  " Easily use comments
   Plug 'derekprior/vim-trimmer'                                            " trim whitespace on save
@@ -160,11 +159,6 @@ EOF
   let NERDTreeShowHidden=1                                                       " Show hidden files
   let NERDTreeQuitOnOpen = 1                                     " quit NERDTree when opening a file
   let NERDTreeIgnore = ['\.DS_Store']                                           " ignore index files
-  "---------------- vim-go -------------------------------------------------------------------------
-  let g:go_def_mapping_enabled = 0                              " prefer language server over vim-go
-  let g:go_code_completion_enabled = 0
-  let g:go_auto_type_info = 0
-
   "---------------- vim-test -----------------------------------------------------------------------
   " space-r runs current spec file
   map <Leader>r :TestFile<CR>
