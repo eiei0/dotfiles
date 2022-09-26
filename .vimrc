@@ -18,6 +18,7 @@
   Plug 'williamboman/mason.nvim'                                                  " nvim pkg manager
   Plug 'williamboman/mason-lspconfig.nvim'                 " closes gaps between mason and lspconfig
   Plug 'neovim/nvim-lspconfig'                                                    " language servers
+  Plug 'keith/rspec.vim'                                                              " rspec syntax
   Plug 'godlygeek/tabular'                                                         " for indentation
   Plug 'Yggdroot/indentLine'                                                " adds indentation lines
   Plug 'alvan/vim-closetag'                                                         " tag completion
@@ -81,6 +82,8 @@
   "---------------- Colors -------------------------------------------------------------------------
   colorscheme gruvbox                                                                 " retro colors
   set background=dark                                                                    " dark mode
+
+  autocmd BufNewFile,BufRead *_foo.rb set syntax=rspec                                " rspec syntax
 " ================= Utilities ======================================================================
   set noswapfile                                                      " no swapfile for a new buffer
   set nobackup                                                                    " turn off backups
