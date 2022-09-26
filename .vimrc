@@ -150,8 +150,6 @@ EOF
 
   "---------------- vim-gitgutter ------------------------------------------------------------------
   set updatetime=100
-  "---------------- vue-language-server ------------------------------------------------------------
-  let g:LanguageClient_serverCommands = { 'vue': ['vls'] }
   "---------------- NERDTree -----------------------------------------------------------------------
   nnoremap <silent> <Leader>v :NERDTreeToggle<CR>                        " Toggle NERDTree (Space-v)
   nmap <silent> <Leader>f :NERDTreeFind<CR>                          " Toggle NERDTreeFind (Space-f)
