@@ -16,6 +16,7 @@
   "---------------- Syntax -------------------------------------------------------------------------
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                  " syntax highlighting
   Plug 'neovim/nvim-lspconfig'                                                    " language servers
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }                       " autocomplete
   Plug 'keith/rspec.vim'                                                              " rspec syntax
   Plug 'godlygeek/tabular'                                                         " for indentation
   Plug 'Yggdroot/indentLine'                                                " adds indentation lines
@@ -177,7 +178,7 @@ lua << EOF
   }
 EOF
 
-  "----------------  Golang functions --------------------------------------------------------------
+  "---------------- Golang functions ---------------------------------------------------------------
 lua << EOF
   function org_imports()
     local clients = vim.lsp.buf_get_clients()
@@ -212,6 +213,12 @@ lua << EOF
   })
 EOF
 
+  "---------------- Shougo/deoplete.nvim -----------------------------------------------------------
+  let g:deoplete#enable_at_startup = 1
+
+  call deoplete#custom#option('omni_patterns', {
+        \ 'go': '[^. *\t]\.\w*',
+        \})
   "---------------- vim-gitgutter ------------------------------------------------------------------
   set updatetime=100
   "---------------- NERDTree -----------------------------------------------------------------------
