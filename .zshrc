@@ -13,6 +13,8 @@ export BUNDLER_EDITOR=nvim
 export ZSH=~/.oh-my-zsh                                       # Path to your oh-my-zsh installation
 source $ZSH/oh-my-zsh.sh
 
+set -o vi                                                                  # enable vim keybindings
+
 # asdf
 plugins=(asdf)
 . $(brew --prefix asdf)/asdf.sh
@@ -69,6 +71,7 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 # Git
 alias g='git'
+alias purgeb='g branch | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 
 # Stitch Fix
 alias sf='cd ~/code/stitchfix'                                  # jump to stitchfix code directory
