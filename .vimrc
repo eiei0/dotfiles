@@ -50,6 +50,7 @@
   set visualbell                                																				 " no sounds
   set gcr=a:blinkon0                                                          " disable cursor blink
   set number relativenumber                         " enable auto toggling between line number modes
+  set completeopt-=preview                                                  " disable scratch buffer
   "---------------- Interaction --------------------------------------------------------------------
   set timeoutlen=1000 ttimeoutlen=0         " remove delay from escape key when entering normal mode
   set history=1000                                                  " store lots of :cmdline history
