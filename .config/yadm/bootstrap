@@ -28,6 +28,14 @@ if [ -f "$HOME/.iterm2" ]; then
   echo "Completed: Setting iTerm preference folder\n"
 fi
 
+echo "Started: Installing fzf"
+if ! command -v $(brew --prefix)/opt/fzf >/dev/null 2>&1; then
+  echo "fzf already installed\n"
+else
+  $(brew --prefix)/opt/fzf/install
+  echo "Completed: Installing fzf\n"
+fi
+
 if ! command -v asdf >/dev/null 2>&1; then
   echo "Started: Installing Ruby via asdf"
   if ! command -v which ruby >/dev/null 2>&1; then
