@@ -83,7 +83,7 @@
   colorscheme gruvbox                                                                 " retro colors
   set background=dark                                                                    " dark mode
 
-  autocmd BufNewFile,BufRead *_foo.rb set syntax=rspec                                " rspec syntax
+  autocmd BufNewFile,BufRead *_spec.rb set syntax=rspec                               " rspec syntax
 " ================= Utilities ======================================================================
   set noswapfile                                                      " no swapfile for a new buffer
   set nobackup                                                                    " turn off backups
