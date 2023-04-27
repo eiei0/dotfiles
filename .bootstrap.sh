@@ -111,12 +111,12 @@ setup_yadm() {
   if [ ! -d "$HOME/.local/share/yadm/repo.git" ]; then
     ohai "Cloning dotfiles..." 
       yadm clone git@github.com:eiei0/dotfiles.git
-
-    ohai "Running bootstrap script..."
-      yadm bootstrap
   else
     ohai "Dotfiles already exist" 
   fi
+
+  ohai "Running bootstrap script..."
+    yadm bootstrap
 }
 
 ##### Main #####
