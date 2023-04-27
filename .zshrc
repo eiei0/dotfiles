@@ -13,11 +13,15 @@ export BUNDLER_EDITOR=nvim
 export ZSH=~/.oh-my-zsh                                       # Path to your oh-my-zsh installation
 source $ZSH/oh-my-zsh.sh
 
+eval $(ssh-agent) > /dev/null
+
+export GPG_TTY=$(tty)
+
 set -o vi                                                                  # enable vim keybindings
 
 # asdf
 plugins=(asdf)
-. $(brew --prefix asdf)/asdf.sh
+. $(brew --prefix asdf)/libexec/asdf.sh
 
 # Ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
@@ -31,8 +35,6 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # Source fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Source private env file
-source $HOME/.env
 # ================= Aliases =======================================================================
 
 # Configs/Utilities
@@ -72,6 +74,3 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 # Git
 alias g='git'
 alias purgeb='g branch | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
-
-# Stitch Fix
-alias sf='cd ~/code/stitchfix'                                  # jump to stitchfix code directory

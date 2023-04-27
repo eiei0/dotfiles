@@ -1,5 +1,5 @@
 [user]
-  signingkey = 2547794CA2769EF5BA2575C9A3ED9F421F463D54
+	signingkey = 297FBC13F00F6CDAD9DCB8C55361F99E4C38A256
   name = Jonathan MacDonald
   email = j0nnyappleseed000@mac.com
 [github]
@@ -107,3 +107,5 @@
   stat = status                     # status
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[init]
+	defaultBranch = main
