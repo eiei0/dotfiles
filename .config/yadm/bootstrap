@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source $HOME/.str_fmt.sh
+
+if [ -f "$HOME/.Brewfile" ]; then
+  ohai "Starting Homebrew bundle..."
+  brew bundle --global
+fi
