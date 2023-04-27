@@ -33,6 +33,15 @@ install_homebrew() {
   fi
 }
 
+install_oh_my_zsh() { 
+  if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    ohai "Installing oh-my-zsh..." 
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+  else
+    ohai "oh-my-zsh already installed" 
+  fi
+}
+
 generate_ssh_key() {
   if [ ! -f $HOME/.ssh/id_rsa ]; then
     ohai "Generating new SSH key..."
@@ -124,6 +133,7 @@ setup_yadm() {
 main() {
   install_xcode_cli_tools
   install_homebrew
+  install_oh_my_zsh 
 
   generate_ssh_key
   install_gpg
