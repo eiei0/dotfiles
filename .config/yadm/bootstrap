@@ -65,3 +65,8 @@ if command_exists asdf; then
     ohai "Go already installed"
   fi
 fi
+
+if command_exists fzf; then
+  ohai "Running fzf install script..."
+  $(brew --prefix)/opt/fzf/install --no-bash --no-zsh --no-fish
+fi
