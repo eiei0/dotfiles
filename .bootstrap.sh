@@ -1,14 +1,11 @@
 #!/bin/bash
 
 source $HOME/.str_fmt.sh
+source $HOME/.shared_funcs.sh
 
 ##### Shared Functions #####
 
 pub_gpg_path="$HOME/public.pgp"
-
-command_exists() {
-  command -v "$@" >/dev/null 2>&1
-}
 
 install_xcode_cli_tools() {
   if ! command_exists xcode-select; then
