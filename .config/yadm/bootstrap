@@ -9,7 +9,9 @@ fi
 
 if [ -f "$HOME/.config/iterm2/com.googlecode.iterm2.plist" ]; then
   ohai "Configuring iTerm2..."
-  brew bundle --global
+
+  # Copy powerline font into Fontbook
+  cp $HOME/.config/iterm2/Meslo\ LG\ M\ Regular\ for\ Powerline.otf /Library/Fonts/
 
   # Specify the preferences directory
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
