@@ -6,3 +6,14 @@ if [ -f "$HOME/.Brewfile" ]; then
   ohai "Starting Homebrew bundle..."
   brew bundle --global
 fi
+
+if [ -f "$HOME/.config/iterm2/com.googlecode.iterm2.plist" ]; then
+  ohai "Configuring iTerm2..."
+  brew bundle --global
+
+  # Specify the preferences directory
+  defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
+
+  # Tell iTerm2 to use the custom preferences in the directory
+  defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+fi
