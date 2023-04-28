@@ -7,6 +7,11 @@ if [ -f "$HOME/.Brewfile" ]; then
   brew bundle --global
 fi
 
+if [ ! -d "$HOME/code" ]; then
+  ohai "Adding ~/code/ directory..."
+  mkdir $HOME/code/
+fi
+
 if [ -f "$HOME/.config/iterm2/com.googlecode.iterm2.plist" ]; then
   ohai "Configuring iTerm2..."
 
