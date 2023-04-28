@@ -6,11 +6,15 @@ source $HOME/.shared_funcs.sh
 if [ -f "$HOME/.Brewfile" ]; then
   ohai "Starting Homebrew bundle..."
   brew bundle --global
+else
+  warn "No Brewfile found"
 fi
 
 if [ ! -d "$HOME/code" ]; then
   ohai "Adding ~/code/ directory..."
   mkdir $HOME/code/
+else
+  ohai "~/code directory already exists"
 fi
 
 if [ -f "$HOME/.config/iterm2/com.googlecode.iterm2.plist" ]; then
@@ -24,6 +28,8 @@ if [ -f "$HOME/.config/iterm2/com.googlecode.iterm2.plist" ]; then
 
   # Tell iTerm2 to use the custom preferences in the directory
   defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+else
+  ohai "iTerm already configured"
 fi
 
 if command_exists asdf; then
@@ -36,6 +42,8 @@ if command_exists asdf; then
     ohai "Installing Ruby via asdf..."
     asdf install ruby latest
     asdf global ruby latest
+  else
+    ohai "Ruby already installed"
   fi
 
   if ! command_exists go 2>&1; then
@@ -53,5 +61,7 @@ if command_exists asdf; then
 
     ohai "Installing gopls language server..."
     go install golang.org/x/tools/gopls@latest
+  else
+    ohai "Go already installed"
   fi
 fi
