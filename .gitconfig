@@ -1,0 +1,53 @@
+[user]
+  signingkey = 53AC56298593AEFF
+  name = Jonathan MacDonald
+  email = j0nnyappleseed000@mac.com
+[github]
+  user = eiei0
+[commit]
+  gpgsign = true
+  template = ~/.gitmessage
+[color]
+  ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+[grep]
+  linenumber = true                 # show line numbers when git grep
+[format]
+  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+[core]
+  excludesfile = /Users/jonathanmacdonald/.gitignore
+  editor = /opt/homebrew/bin/nvim
+  mergeoptions = --no-edit
+[merge]
+  tool = meld
+[mergetool]
+  prompt = false
+  keepBackup = true
+[mergetool  "mydeltawalker"]
+  cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+[gpg]
+  program = /opt/homebrew/bin/gpg
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+[init]
+  defaultBranch = main
+[alias]
+  chunkyadd = add --patch           # stage commits chunk by chunk
+  tree = log --graph --oneline --all  # show tree graph log
+
+  b = branch -v                     # branch (verbose)
+  cp = cherry-pick -x               # grab a change from a branch
+  l = log --graph --date=short
+  r = remote -v                     # show remotes (verbose)
+  s = status                        # status
+
+  # diff-so-fancy
+  d = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\"  && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
