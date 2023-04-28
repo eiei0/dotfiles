@@ -14,3 +14,6 @@ export BUNDLER_EDITOR='vim'
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+
+# Tmux
+export TERM="screen-256color" # Tmux 256 color forcing
