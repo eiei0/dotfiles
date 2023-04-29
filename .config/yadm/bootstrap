@@ -58,9 +58,6 @@ if command_exists asdf; then
       ohai "Adding ~/go/ directory..."
       mkdir -p $HOME/go/{bin,pkg,src}
     fi
-
-    ohai "Installing gopls language server..."
-    go install golang.org/x/tools/gopls@latest
   else
     ohai "Go already installed"
   fi
