@@ -67,3 +67,14 @@ if command_exists fzf; then
   ohai "Running fzf install script..."
   $(brew --prefix)/opt/fzf/install --no-bash --no-zsh --no-fish
 fi
+
+if [ ! -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
+  ohai "Installing Packer..."
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+    $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
+fi
+
+if command -v vim >/dev/null 2>&1; then
+  ohai "Bootstraping Vim..."
+  vim $HOME/.config/nvim/lua/eiei0/packer.lua 'so' '+PackerSync' '+qall'
+fi
