@@ -56,8 +56,8 @@ generate_ssh_key() {
 
 install_gpg() {
   if ! command_exists gpg; then
-    ohai "Installing GPG client..." 
-      brew install gnupg
+    ohai "Installing GPG client..."
+      brew install gpg2 gnupg pinentry-mac
   else
     ohai "GPG client already installed"
   fi

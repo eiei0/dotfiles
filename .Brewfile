@@ -3,6 +3,8 @@ tap "homebrew/bundle"
 # Should already be installed
 brew "gh"
 brew "gnupg"
+brew "gpg2"
+brew "pinentry-mac"
 brew "yadm"
 
 # Brews
