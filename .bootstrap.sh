@@ -9,7 +9,7 @@ pub_gpg_path="$HOME/public.pgp"
 
 install_xcode_cli_tools() {
   if ! command_exists xcode-select; then
-    ohai "Installing Xcode command line tools..." 
+    ohai "Installing Xcode command line tools..."
       xcode-select --install
   else
     ohai "Xcode command line tools already installed"
@@ -18,7 +18,7 @@ install_xcode_cli_tools() {
 
 install_homebrew() {
   if ! command_exists brew; then
-    ohai "Installing Homebrew..." 
+    ohai "Installing Homebrew..."
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     if ! command_exists brew; then
@@ -30,12 +30,12 @@ install_homebrew() {
   fi
 }
 
-install_oh_my_zsh() { 
+install_oh_my_zsh() {
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    ohai "Installing oh-my-zsh..." 
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+    ohai "Installing oh-my-zsh..."
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   else
-    ohai "oh-my-zsh already installed" 
+    ohai "oh-my-zsh already installed"
   fi
 }
 
@@ -73,7 +73,7 @@ generate_gpg_key() {
 
     ohai "Please enter passphrase for new gpg key:"
       read -sp "" passphrase
-      gpg --batch --passphrase "$passphrase" --quick-generate-key "$uid" $algo sign $expire 
+      gpg --batch --passphrase "$passphrase" --quick-generate-key "$uid" $algo sign $expire
       gpg --output $pub_gpg_path --armor --export $uid
   else
     ohai "GPG key already generated"
@@ -82,7 +82,7 @@ generate_gpg_key() {
 
 install_github_cli() {
   if ! command_exists gh; then
-    ohai "Installing Github CLI..." 
+    ohai "Installing Github CLI..."
       brew install gh
   else
     ohai "Github CLI already installed"
@@ -98,14 +98,14 @@ configure_github_keys() {
     ohai "Adding GPG key to Github..."
     gh auth refresh -s write:gpg_key
     gh gpg-key add $pub_gpg_path -t 'gpg_key'
-    
+
     rm $pub_gpg_path
   fi
 }
 
 install_yadm() {
   if ! command_exists yadm; then
-    ohai "Installing YADM..." 
+    ohai "Installing YADM..."
       brew install yadm
   else
     ohai "YADM already installed"
@@ -115,10 +115,10 @@ install_yadm() {
 setup_yadm() {
   # make sure dotfiles repo hasn't already been cloned
   if [ ! -d "$HOME/.local/share/yadm/repo.git" ]; then
-    ohai "Cloning dotfiles..." 
+    ohai "Cloning dotfiles..."
       yadm clone git@github.com:eiei0/dotfiles.git
   else
-    ohai "Dotfiles already exist" 
+    ohai "Dotfiles already exist"
   fi
 
   ohai "Running bootstrap script..."
@@ -130,7 +130,7 @@ setup_yadm() {
 main() {
   install_xcode_cli_tools
   install_homebrew
-  install_oh_my_zsh 
+  install_oh_my_zsh
 
   generate_ssh_key
   install_gpg
