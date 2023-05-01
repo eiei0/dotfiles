@@ -84,10 +84,20 @@ _G.packer_plugins = {
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
+  },
+  ["lightline.vim"] = {
+    loaded = true,
+    path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/lightline.vim",
+    url = "https://github.com/itchyny/lightline.vim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -163,11 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-numbertoggle"] = {
     loaded = true,

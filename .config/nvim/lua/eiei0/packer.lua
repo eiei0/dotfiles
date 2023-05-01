@@ -12,6 +12,7 @@ return require("packer").startup(function(use)
   use "christoomey/vim-tmux-navigator"                                             -- easy navigation b/w vim & tmux
 -- ---------------- Colors -----------------------------------------------------------------------------------------
   use { "morhetz/gruvbox" }                                                                           -- colorscheme
+  use { "itchyny/lightline.vim" }                                                           -- minimalist status bar
 -- ---------------- Syntax -----------------------------------------------------------------------------------------
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })                                      -- text parsing
   use {                                                                                               -- LSP support
@@ -35,7 +36,7 @@ return require("packer").startup(function(use)
   use "tpope/vim-commentary"                                                                       -- comment easily
   use "derekprior/vim-trimmer"                                                            -- trim whitespace on save
 -- ---------------- Git --------------------------------------------------------------------------------------------
-  use "airblade/vim-gitgutter"                                                                 -- git diff in gutter
+  use "lewis6991/gitsigns.nvim"                                                                -- git diff in gutter
   use "tpope/vim-fugitive"                                                                        -- vim git wrapper
 -- ---------------- Ruby/Rails -------------------------------------------------------------------------------------
   use "keith/rspec.vim"                                                                 -- rspec syntax highlighting
