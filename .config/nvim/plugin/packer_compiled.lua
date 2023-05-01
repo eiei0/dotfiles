@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/rspec.vim",
     url = "https://github.com/keith/rspec.vim"
   },
+  ["telescope-ag"] = {
+    loaded = true,
+    path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/telescope-ag",
+    url = "https://github.com/kelly-lin/telescope-ag"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/telescope.nvim",

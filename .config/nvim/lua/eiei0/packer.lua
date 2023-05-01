@@ -8,6 +8,7 @@ return require("packer").startup(function(use)
   use "tpope/vim-surround"                                                                -- change surrounding text
   use "jeffkreeftmeijer/vim-numbertoggle"                                 -- auto toggling between line number modes
   use { "nvim-telescope/telescope.nvim", tag = "0.1.1", requires = { { "nvim-lua/plenary.nvim" } } } -- fuzzy finder
+  use { "kelly-lin/telescope-ag", requires = { "nvim-telescope/telescope.nvim" } }     -- lua silver searcher plugin
   use "christoomey/vim-tmux-navigator"                                             -- easy navigation b/w vim & tmux
 -- ---------------- Colors -----------------------------------------------------------------------------------------
   use { "morhetz/gruvbox" }                                                                           -- colorscheme
