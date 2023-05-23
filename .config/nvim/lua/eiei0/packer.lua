@@ -12,7 +12,7 @@ return require("packer").startup(function(use)
   use "christoomey/vim-tmux-navigator"                                             -- easy navigation b/w vim & tmux
 -- ---------------- Colors -----------------------------------------------------------------------------------------
   use { "morhetz/gruvbox" }                                                                           -- colorscheme
-  use { "itchyny/lightline.vim" }                                                           -- minimalist status bar
+  use { 'nvim-lualine/lualine.nvim' }                                                                  -- status bar
 -- ---------------- Syntax -----------------------------------------------------------------------------------------
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })                                      -- text parsing
   use {                                                                                               -- LSP support

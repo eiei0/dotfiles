@@ -94,15 +94,15 @@ _G.packer_plugins = {
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
-  ["lightline.vim"] = {
-    loaded = true,
-    path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/lightline.vim",
-    url = "https://github.com/itchyny/lightline.vim"
-  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
