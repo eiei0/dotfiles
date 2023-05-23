@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local config = require('lspconfig')
 
 lsp.preset({})
 
@@ -10,10 +11,10 @@ lsp.ensure_installed({
   'bufls',
   'gopls',
   'lua_ls',
-  'ruby_ls'
+  'solargraph'
 })
 
-require'lspconfig'.lua_ls.setup {
+config.lua_ls.setup {
   settings = {
     Lua = {
       diagnostics = {
@@ -22,6 +23,10 @@ require'lspconfig'.lua_ls.setup {
       },
     },
   },
+}
+
+config.solargraph.setup {
+  filetypes = { 'ruby', 'rspec' },
 }
 
 lsp.setup()
