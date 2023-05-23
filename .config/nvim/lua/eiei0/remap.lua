@@ -5,7 +5,7 @@ vim.keymap.set("n", "J", "mzJ`z")                        -- capital j keeps curs
 
 vim.keymap.set("x", "<leader>p", [["_dP]])                            -- keeps the copied text after pasting over other text
 
-vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- search and replace within file
+vim.keymap.set("n", "<leader>]", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- search and replace within file
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })                  -- make current file executable
 
