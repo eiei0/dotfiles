@@ -61,6 +61,17 @@ if command_exists asdf; then
   else
     ohai "Go already installed"
   fi
+
+  if ! command_exists node 2>&1; then
+    ohai "Installing Node asdf plugin..."
+    asdf plugin add nodejs "https://github.com/asdf-vm/asdf-nodejs.git"
+
+    ohai "Installing Node via asdf..."
+    asdf install nodejs latest
+    asdf global nodejs latest
+  else
+    ohai "Node already installed"
+  fi
 fi
 
 if command_exists fzf; then
