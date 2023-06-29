@@ -14,16 +14,8 @@ lsp.ensure_installed({
   'solargraph'
 })
 
-config.lua_ls.setup {
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-    },
-  },
-}
+-- Fix Undefined global 'vim'
+lsp.nvim_workspace()
 
 config.solargraph.setup {
   filetypes = { 'ruby', 'rspec' },
