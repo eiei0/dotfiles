@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/gruvbox",
