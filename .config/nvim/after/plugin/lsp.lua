@@ -21,4 +21,6 @@ config.solargraph.setup {
   filetypes = { 'ruby', 'rspec' },
 }
 
+require('go').setup()
+
 lsp.setup()
