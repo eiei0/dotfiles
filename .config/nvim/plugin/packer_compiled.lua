@@ -164,11 +164,6 @@ _G.packer_plugins = {
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-auto-save"] = {
-    loaded = true,
-    path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/vim-auto-save",
-    url = "https://github.com/907th/vim-auto-save"
-  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/jonathan.macdonald/.local/share/nvim/site/pack/packer/start/vim-commentary",

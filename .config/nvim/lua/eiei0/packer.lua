@@ -43,7 +43,6 @@ return require("packer").startup(function(use)
 -- ---------------- Golang -----------------------------------------------------------------------------------------
   use "ray-x/go.nvim"                                                            -- go neovim support written in lua
 -- ---------------- Misc -------------------------------------------------------------------------------------------
-  use "907th/vim-auto-save"                                                     -- save everytime buffer is modified
   use "vim-test/vim-test"                                                          -- wrapper for running test suite
 end)
 
