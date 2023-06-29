@@ -10,4 +10,6 @@ eval $(export GPG_TTY=$(tty))                                                   
 zstyle ':omz:update' mode auto                                # update automatically without asking
 set -o vi                                                                  # enable vim keybindings
 
-plugins=(git asdf)                                                  
+plugins=(git asdf)
+
+eval "$(direnv hook zsh)"                                     # load direnv

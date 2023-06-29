@@ -10,6 +10,7 @@ brew "yadm"
 # Brews
 brew "asdf"
 brew "diff-so-fancy"
+brew "direnv"
 brew "docker"
 brew "docker-compose"
 brew "coreutils"
