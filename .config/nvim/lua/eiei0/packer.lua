@@ -44,5 +44,12 @@ return require("packer").startup(function(use)
   use "ray-x/go.nvim"                                                            -- go neovim support written in lua
 -- ---------------- Misc -------------------------------------------------------------------------------------------
   use "vim-test/vim-test"                                                          -- wrapper for running test suite
+  use {                                                                                       -- refactoring library
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
 end)
 
