@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function(use)
 -- ================= Plugins =======================================================================================
   use "wbthomason/packer.nvim"                                                           -- nvim lua package manager
+  use "github/copilot.vim"                                                                                -- ai help
 -- ---------------- Navigation -------------------------------------------------------------------------------------
   use "preservim/nerdtree"
   use "tpope/vim-surround"                                                                -- change surrounding text
