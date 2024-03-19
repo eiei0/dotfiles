@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
 -- ---------------- Golang -----------------------------------------------------------------------------------------
   use "ray-x/go.nvim"                                                            -- go neovim support written in lua
 -- ---------------- Misc -------------------------------------------------------------------------------------------
+  use "j-hui/fidget.nvim"                                                                    -- lsp progress spinner
   use "vim-test/vim-test"                                                          -- wrapper for running test suite
   use {                                                                                       -- refactoring library
     "ThePrimeagen/refactoring.nvim",
