@@ -11,6 +11,7 @@ return require("packer").startup(function(use)
   use { "nvim-telescope/telescope.nvim", tag = "0.1.6", requires = { { "nvim-lua/plenary.nvim" } } } -- fuzzy finder
   use { "kelly-lin/telescope-ag", requires = { "nvim-telescope/telescope.nvim" } }     -- lua silver searcher plugin
   use "christoomey/vim-tmux-navigator"                                             -- easy navigation b/w vim & tmux
+  use "folke/trouble.nvim"                                                        -- quickfix list and location list
 -- ---------------- Colors -----------------------------------------------------------------------------------------
   use { "morhetz/gruvbox" }                                                                           -- colorscheme
   use { 'nvim-lualine/lualine.nvim' }                                                                  -- status bar
@@ -36,6 +37,8 @@ return require("packer").startup(function(use)
   }
   use "tpope/vim-commentary"                                                                       -- comment easily
   use "derekprior/vim-trimmer"                                                            -- trim whitespace on save
+  use "jose-elias-alvarez/null-ls.nvim"                                    -- lsp support for formatting and linting
+  use "j-hui/fidget.nvim"                                                                              -- lsp status
 -- ---------------- Git --------------------------------------------------------------------------------------------
   use "lewis6991/gitsigns.nvim"                                                                -- git diff in gutter
   use "tpope/vim-fugitive"                                                                        -- vim git wrapper
