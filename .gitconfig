@@ -35,7 +35,7 @@
   cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 [gpg]
   program = /opt/homebrew/bin/gpg
-[url "git@github.com:"]
+[url "ssh://git@github.com/"]
   insteadOf = https://github.com/
 [init]
   defaultBranch = main
