@@ -2,6 +2,10 @@
 
 ZSH_THEME="agnoster"                           # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
+# ================= Golang ========================================================================
+
+GOPRIVATE="github.com/myprizepicks/*"          # Set GOPRIVATE to allow go get private repos
+
 # ================= Configs =======================================================================
 
 source $ZSH/oh-my-zsh.sh                                               # load main oh-my-zsh script
