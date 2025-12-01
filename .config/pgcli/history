@@ -1,0 +1,12 @@
+
+# 2024-10-25 12:27:33.541587
++select '(''nohuddle'', ''' || p.id || ''', ''' || pp.provider_id || ''', true), -- ' || p.first_name || ' ' || p.last_name from player p join player_provider pp ON pp.player_id = p.id where pp.provider_name = 'sportradar' and pp.provider_id != '' limit 4000;
+
+# 2024-10-25 12:28:15.080222
++\q
+
+# 2024-10-25 12:32:57.174819
++select '(''slapshot-hockey'', ''' || p.id || ''', ''' || pp.provider_id || ''', true), -- ' || p.first_name || ' ' || p.last_name from player p join player_provider pp ON pp.player_id = p.id where pp.provider_name = 'sportradar' and pp.provider_id != '' limit 4000; \o ~/Desktop/slapshot-hockey.txt
+
+# 2024-10-25 12:33:01.112177
++\q

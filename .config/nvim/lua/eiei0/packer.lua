@@ -13,7 +13,7 @@ return require("packer").startup(function(use)
   use "christoomey/vim-tmux-navigator"                                             -- easy navigation b/w vim & tmux
   use "folke/trouble.nvim"                                                        -- quickfix list and location list
 -- ---------------- Colors -----------------------------------------------------------------------------------------
-  use { "morhetz/gruvbox" }                                                                           -- colorscheme
+  use {'morhetz/gruvbox', config = function() vim.cmd.colorscheme("gruvbox") end }                    -- colorscheme
   use { 'nvim-lualine/lualine.nvim' }                                                                  -- status bar
 -- ---------------- Syntax -----------------------------------------------------------------------------------------
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })                                      -- text parsing
@@ -47,7 +47,6 @@ return require("packer").startup(function(use)
 -- ---------------- Golang -----------------------------------------------------------------------------------------
   use "ray-x/go.nvim"                                                            -- go neovim support written in lua
 -- ---------------- Misc -------------------------------------------------------------------------------------------
-  use "j-hui/fidget.nvim"                                                                    -- lsp progress spinner
   use "vim-test/vim-test"                                                          -- wrapper for running test suite
   use {                                                                                       -- refactoring library
     "ThePrimeagen/refactoring.nvim",
