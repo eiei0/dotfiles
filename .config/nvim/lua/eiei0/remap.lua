@@ -12,9 +12,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })     
 vim.keymap.set("n", "<leader>bp", "orequire 'pry'; binding.pry<esc>^")                               -- insert ruby debugger
 
 vim.keymap.set("n", "<C-J>", "<C-W><C-J>")                                                 -- easy navigation between splits
-vim.keymap.set("n", "<C-K> ", "<C-W><C-K>")
+vim.keymap.set("n", "<C-K>", "<C-W><C-K>")
 vim.keymap.set("n", "<C-L>", "<C-W><C-L>")
-vim.keymap.set("n", "<C-H>", "<C-W><C-J>")
+vim.keymap.set("n", "<C-H>", "<C-W><C-H>")
 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])                                      -- easy copy/paste to system clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])
