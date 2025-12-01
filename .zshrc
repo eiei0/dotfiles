@@ -6,6 +6,9 @@ ZSH_THEME="agnoster"                           # See https://github.com/ohmyzsh/
 
 GOPRIVATE="github.com/myprizepicks/*"          # Set GOPRIVATE to allow go get private repos
 
+# ================= PrizePicks ====================================================================
+export KUBESEAL_CONFIG_DIR="$HOME/code/prizepicks/kubeseal-config"
+export GITOPS_TOOLS_DIR="$HOME/code/prizepicks/gitops-tools"
 # ================= Configs =======================================================================
 
 source $ZSH/oh-my-zsh.sh                                               # load main oh-my-zsh script

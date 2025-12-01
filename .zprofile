@@ -16,3 +16,5 @@ export PATH=$PATH:$GOBIN
 
 # Tmux
 export TERM="screen-256color" # Tmux 256 color forcing
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
