@@ -56,7 +56,6 @@ require("lazy").setup({
   },
   "tpope/vim-commentary",
   "derekprior/vim-trimmer",
-  "jose-elias-alvarez/null-ls.nvim",
   "j-hui/fidget.nvim",
 
   -- Git
