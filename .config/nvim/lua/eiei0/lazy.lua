@@ -30,12 +30,7 @@ require("lazy").setup({
   "folke/trouble.nvim",
 
   -- Colors
-  {
-    "morhetz/gruvbox",
-    config = function()
-      vim.cmd.colorscheme("gruvbox")
-    end
-  },
+  "morhetz/gruvbox",
   "nvim-lualine/lualine.nvim",
 
   -- Syntax
