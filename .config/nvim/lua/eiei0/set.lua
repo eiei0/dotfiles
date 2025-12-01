@@ -1,4 +1,3 @@
-vim.wo.number = true
 vim.opt.nu = true                                                           -- show current line number
 vim.opt.relativenumber = true                               -- enable auto toggling between line number
 
