@@ -17,6 +17,11 @@ require("lazy").setup({
   {
     "preservim/nerdtree",
     lazy = false,  -- Load immediately on startup
+    init = function()
+      -- Disable NERDTree's C-j/C-k mappings to allow vim-tmux-navigator to work
+      vim.g.NERDTreeMapJumpNextSibling = ''
+      vim.g.NERDTreeMapJumpPrevSibling = ''
+    end,
   },
   "tpope/vim-surround",
   "jeffkreeftmeijer/vim-numbertoggle",
@@ -28,7 +33,10 @@ require("lazy").setup({
     "kelly-lin/telescope-ag",
     dependencies = { "nvim-telescope/telescope.nvim" }
   },
-  "christoomey/vim-tmux-navigator",
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,  -- Must load immediately for tmux integration
+  },
   "folke/trouble.nvim",
 
   -- Colors
