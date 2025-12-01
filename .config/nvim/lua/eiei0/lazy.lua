@@ -40,7 +40,7 @@ require("lazy").setup({
   },
   {
     "VonHeikemen/lsp-zero.nvim",
-    branch = "v2.x",
+    branch = "v4.x",
     dependencies = {
       "neovim/nvim-lspconfig",
       {
@@ -51,6 +51,7 @@ require("lazy").setup({
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
       "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
     }
   },
   "tpope/vim-commentary",
