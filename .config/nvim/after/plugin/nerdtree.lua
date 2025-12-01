@@ -1,5 +1,10 @@
-vim.api.nvim_set_keymap("n", "<leader>v", ":NERDTreeToggle<CR>", { noremap = true }) -- Toggle NERDTree (Space-v)
-vim.api.nvim_set_keymap("n", "<leader>f", ":NERDTreeFind<CR>", { noremap = true }) -- Toggle NERDTreeFind (Space-f)
+-- Set keymaps on VimEnter to ensure NERDTree commands are available
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.keymap.set("n", "<leader>v", ":NERDTreeToggle<CR>", { noremap = true, desc = "Toggle NERDTree" })
+    vim.keymap.set("n", "<leader>f", ":NERDTreeFind<CR>", { noremap = true, desc = "NERDTree find current file" })
+  end,
+})
 
 vim.cmd [[
   let NERDTreeAutoDeleteBuffer = 1                              " auto delete buffer of file deleted
