@@ -14,7 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Navigation
   "github/copilot.vim",
-  "preservim/nerdtree",
+  {
+    "preservim/nerdtree",
+    lazy = false,  -- Load immediately on startup
+  },
   "tpope/vim-surround",
   "jeffkreeftmeijer/vim-numbertoggle",
   {
