@@ -1,2 +1,5 @@
 # Neovim - Packer compiled plugins (auto-generated)
 .config/nvim/plugin/packer_compiled.lua
+
+# GitHub Copilot - Auto-generated files
+.config/github-copilot/
