@@ -12,7 +12,7 @@ export GITOPS_TOOLS_DIR="$HOME/code/prizepicks/gitops-tools"
 
 export PATH="$PATH:/Users/jonathan.macdonald/.local/bin"
 # ================= Configs =======================================================================
-
+source ~/.secrets                                                                    # load secrets
 source $ZSH/oh-my-zsh.sh                                               # load main oh-my-zsh script
 eval $(export GPG_TTY=$(tty))                                                    # Point GPG to TTY
 
